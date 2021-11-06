@@ -3,7 +3,8 @@ sudo: required
 services: docker
 
 before_install:
-  - docker-compose up --build -d
+    - docker login -u yama3t -p 6209ad65-9bda-4d1d-834e-7acb280e72fd
+    - docker-compose up --build -d
 
 script:
   - docker-compose exec --env 'RAILS_ENV=test' web rails db:create
